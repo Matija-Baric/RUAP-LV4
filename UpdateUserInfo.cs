@@ -43,7 +43,13 @@ namespace SeleniumTests
         public void TheUpdateUserInfoTest()
         {
             driver.Navigate().GoToUrl("https://demowebshop.tricentis.com/");
-
+            driver.FindElement(By.LinkText("Log in")).Click();
+            driver.FindElement(By.Id("Email")).Clear();
+            driver.FindElement(By.Id("Email")).SendKeys("igorkerec@gmail.com");
+            driver.FindElement(By.Id("Password")).Click();
+            driver.FindElement(By.Id("Password")).Clear();
+            driver.FindElement(By.Id("Password")).SendKeys("17.10.2000");
+            driver.FindElement(By.XPath("//input[@value='Log in']")).Click();
             driver.FindElement(By.LinkText("igorkerec@gmail.com")).Click();
             driver.FindElement(By.Id("FirstName")).Click();
             driver.FindElement(By.Id("FirstName")).Click();
